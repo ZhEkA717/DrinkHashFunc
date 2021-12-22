@@ -3,14 +3,14 @@
 function HashStorageFunc() { // класс 
     let hesh = {};                                           //приватное свойство 
     this.addValue = function (key, value) {                  // публичный метод 
-        if (!(key in hesh))
+        if (!(key in hesh)){
             hesh[key] = value;
+        }  
     };
     this.getValue = function (key) {
         if (key in hesh) {
             return hesh[key];
         }
-        console.log(key);
     };
     this.deleteValue = function (key) {
         if (key in hesh) {
@@ -40,11 +40,11 @@ function addDrink() {
         }
     }
     if (rec != null) {
-        let alc_rec = {
+        let alcRec = {
             'Alcohol': (alc ? 'Да' : 'Нет'),
             'Reciepe': rec
         };
-        drinkStorage.addValue(drink, alc_rec);              // вызов метода addValue
+        drinkStorage.addValue(drink, alcRec);              // вызов метода addValue
     }
 }
 
