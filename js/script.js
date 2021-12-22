@@ -1,17 +1,17 @@
 "use strict";
 
 function HashStorageFunc() { // класс 
-    let hesh = {};  //приватное свойство 
-    this.addValue = function (key, value) { // публичный метод 
+    let hesh = {};                                           //приватное свойство 
+    this.addValue = function (key, value) {                  // публичный метод 
         if (!(key in hesh))
             hesh[key] = value;
-    }
+    };
     this.getValue = function (key) {
         if (key in hesh) {
             return hesh[key];
         }
         console.log(key);
-    }
+    };
     this.deleteValue = function (key) {
         if (key in hesh) {
             delete hesh[key];
@@ -19,13 +19,13 @@ function HashStorageFunc() { // класс
         } else {
             return false;
         }
-    }
+    };
     this.getKeys = function () {
         return Object.keys(hesh);
-    }
+    };
 }
 
-let drinkStorage = new HashStorageFunc();// создаем объект класса
+let drinkStorage = new HashStorageFunc();                   // создаем объект класса
 
 function addDrink() {
     let drink = prompt('Введите напиток').toLowerCase();
@@ -44,7 +44,7 @@ function addDrink() {
             'Alcohol': (alc ? 'Да' : 'Нет'),
             'Reciepe': rec
         };
-        drinkStorage.addValue(drink, alc_rec);// вызов метода addValue
+        drinkStorage.addValue(drink, alc_rec);              // вызов метода addValue
     }
 }
 
@@ -61,7 +61,7 @@ function getDrink() {
             алкогольный: ${checkDrink["Alcohol"]}
             рецепт приготовления: ${checkDrink["Reciepe"]}`);
         } else {
-            alert('Такого напитка не сущевствует')
+            alert('Такого напитка не сущевствует');
         }
     }
 }
@@ -74,9 +74,9 @@ function deleteDrink() {
     if (drink != null) {
         let checkDelete = drinkStorage.deleteValue(drink);
         if (checkDelete) {
-            alert('Напиток удален')
+            alert('Напиток удален');
         } else {
-            alert('Такого напитка не существует')
+            alert('Такого напитка не существует');
         }
     }
 }
